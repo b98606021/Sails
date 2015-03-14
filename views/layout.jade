@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    title= title
+
+    // Viewport mobile tag for sensible mobile support
+    meta(name="viewport",content="width=device-width, initial-scale=1, maximum-scale=1")
+    link(rel='stylesheet', href='/styles/bootstrap.css')
+
+    block styles
+
+  body
+    div(class="navbar navbar-inverse navbar-fixed-top")
+        div.container
+            a(href="/" class="navbar-brand") SOMEBODY.
+    block body
+
+    div.container
+        hr
+        footer.footer
+            div(class="pull-right")
+                a(href="http://sailsjs.com/") Sails.js
+                div Tutorial by irl nathan......sdsds
+
+    // The linker searches for this tag and adds js.  If there's no linker, we point to sails.io.js
+    // SCRIPTS
+    script(src="/js/dependencies/sails.io.js")
+    // SCRIPTS END
+

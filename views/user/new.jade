@@ -1,0 +1,30 @@
+extends ../layout
+block body
+	div.container
+		div.jumbotron(style="text-align:center;")
+			form(action="/user/create" method="POST")
+				h2 Create an account
+				if(flash && flash.err) 
+					ul(class="alert alert-success")
+						#<object>.keys(flash.err).foreach(function(error) {
+							li json.stringify.(flash.err(error))
+						}
+
+				div
+					input(type="text" placeholder="your name" name="name")
+				br
+				div
+					input(type="text" placeholder="your title" name="title")
+				br
+				div
+					input(type="text" placeholder="Email Address" name="email")
+				br
+				div
+					input(type="password" placeholder="password" name="password")
+				br
+				div
+					input(type="password" placeholder="password confirmation" name="confirmation")
+				br
+				input(type="submit" class="btn btn-lg btn-primary" value="Create Account")
+				input(type="hidden" name="_csrf" value="<%= _csrf %>")
+
